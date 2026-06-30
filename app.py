@@ -1,4 +1,5 @@
 from orchestrator import Orchestrator
+from report_generator import ReportGenerator
 
 student_profile = {
     "name": "Muhammad",
@@ -10,28 +11,14 @@ student_profile = {
 }
 
 orchestrator = Orchestrator()
-
 results = orchestrator.run(student_profile)
 
-print("\n" + "=" * 60)
-print("AI STUDENT SUCCESS MENTOR REPORT")
-print("=" * 60)
+report_generator = ReportGenerator()
+report = report_generator.generate(results)
 
-print("\nCAREER RESULT:")
-print(results["career_result"])
+print(report)
 
-print("\nSKILL GAP RESULT:")
-print(results["skill_gap_result"])
+with open("output/report.md", "w", encoding="utf-8") as file:
+    file.write(report)
 
-print("\nINTERNSHIP RESULT:")
-print(results["internship_result"])
-
-print("\nSTUDY PLAN RESULT:")
-print(results["study_plan_result"])
-
-print("\nPROJECT RECOMMENDATIONS:")
-print(results["project_result"])
-
-print("\n" + "=" * 60)
-print("REPORT GENERATED SUCCESSFULLY")
-print("=" * 60)
+print("\nReport saved successfully to output/report.md")
