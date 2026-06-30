@@ -1,8 +1,4 @@
-from agents.career_agent import CareerAgent
-from agents.skill_gap_agent import SkillGapAgent
-from agents.internship_agent import InternshipAgent
-from agents.study_planner_agent import StudyPlannerAgent
-from agents.project_recommendation_agent import ProjectRecommendationAgent
+from orchestrator import Orchestrator
 
 student_profile = {
     "name": "Muhammad",
@@ -13,47 +9,29 @@ student_profile = {
     "interests": ["AI", "Data Science"]
 }
 
-career_agent = CareerAgent()
-career_result = career_agent.run(student_profile)
+orchestrator = Orchestrator()
+
+results = orchestrator.run(student_profile)
+
+print("\n" + "=" * 60)
+print("AI STUDENT SUCCESS MENTOR REPORT")
+print("=" * 60)
 
 print("\nCAREER RESULT:")
-print(career_result)
-
-skill_agent = SkillGapAgent()
-
-skill_result = skill_agent.run({
-    "skills": student_profile["skills"],
-    "career_paths": career_result["career_paths"]
-})
+print(results["career_result"])
 
 print("\nSKILL GAP RESULT:")
-print(skill_result)
-
-internship_agent = InternshipAgent()
-
-internship_result = internship_agent.run({
-    "career_paths": career_result["career_paths"],
-    "missing_skills": skill_result["missing_skills"]
-})
+print(results["skill_gap_result"])
 
 print("\nINTERNSHIP RESULT:")
-print(internship_result)
-
-study_agent = StudyPlannerAgent()
-
-study_result = study_agent.run({
-    "missing_skills": skill_result["missing_skills"]
-})
+print(results["internship_result"])
 
 print("\nSTUDY PLAN RESULT:")
-print(study_result)
-
-project_agent = ProjectRecommendationAgent()
-
-project_result = project_agent.run({
-    "career_paths": career_result["career_paths"],
-    "missing_skills": skill_result["missing_skills"]
-})
+print(results["study_plan_result"])
 
 print("\nPROJECT RECOMMENDATIONS:")
-print(project_result)
+print(results["project_result"])
+
+print("\n" + "=" * 60)
+print("REPORT GENERATED SUCCESSFULLY")
+print("=" * 60)
