@@ -1,5 +1,6 @@
 from agents.career_agent import CareerAgent
 from agents.skill_gap_agent import SkillGapAgent
+from agents.internship_agent import InternshipAgent
 
 student_profile = {
     "name": "Muhammad",
@@ -25,3 +26,13 @@ skill_result = skill_agent.run({
 
 print("\nSKILL GAP RESULT:")
 print(skill_result)
+
+internship_agent = InternshipAgent()
+
+internship_result = internship_agent.run({
+    "career_paths": career_result["career_paths"],
+    "missing_skills": skill_result["missing_skills"]
+})
+
+print("\nINTERNSHIP RESULT:")
+print(internship_result)
