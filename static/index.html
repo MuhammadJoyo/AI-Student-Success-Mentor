@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuccessAI — Personalized Student Mentorship Platform</title>
+    <meta name="description" content="Unlock your academic and professional potential with SuccessAI. Our multi-agent system maps your skills, plans your learning, and recommends internships.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Ambient Glows -->
+    <div class="glow-sphere glow-1"></div>
+    <div class="glow-sphere glow-2"></div>
+    <div class="glow-sphere glow-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo" id="nav-logo">
+                <i data-lucide="graduation-cap" class="logo-icon"></i>
+                <span class="logo-text">Success<span class="gradient-text">AI</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features-anchor" id="lnk-features">Features</a>
+                <a href="#architecture-anchor" id="lnk-arch">Architecture</a>
+                <button class="btn btn-secondary btn-sm" id="btn-nav-start">Launch App</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        
+        <!-- SECTION 1: LANDING PAGE -->
+        <section id="landing-section" class="active-section">
+            <div class="hero">
+                <div class="badge-pill">
+                    <span class="pulse-dot"></span>
+                    <span>Empowered by Multi-Agent Intelligence</span>
+                </div>
+                <h1 class="hero-title">
+                    Navigate Your Future with <br>
+                    <span class="gradient-text">Personalized AI Mentorship</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Accelerate your career readiness. SuccessAI runs your student profile through 5 specialized AI agents to uncover paths, bridge skill gaps, plan your weeks, and locate ideal internships.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg" id="btn-hero-cta">
+                        Start AI Analysis
+                        <i data-lucide="arrow-right" class="btn-icon-right"></i>
+                    </button>
+                    <a href="#architecture-anchor" class="btn btn-tertiary btn-lg">Explore Architecture</a>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div id="features-anchor" class="section-divider"></div>
+            <div class="section-header">
+                <h2 class="section-title">Ensemble of Specialized Agents</h2>
+                <p class="section-desc">Each agent is highly trained to focus on one phase of your transition from student to industry professional.</p>
+            </div>
+            <div class="features-grid">
+                <div class="glass-card feature-card">
+                    <div class="feature-icon-wrapper purple">
+                        <i data-lucide="briefcase"></i>
+                    </div>
+                    <h3>Career Matcher</h3>
+                    <p>Analyzes your major, skills, and interests to suggest 3 high-impact industry roles tailored specifically for you.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon-wrapper blue">
+                        <i data-lucide="compass"></i>
+                    </div>
+                    <h3>Skill Gap Assessor</h3>
+                    <p>Compares your capabilities against market requirements and outlines the exact tools and skills you lack.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon-wrapper cyan">
+                        <i data-lucide="search"></i>
+                    </div>
+                    <h3>Internship Finder</h3>
+                    <p>Recommends realistic, entry-level internship titles designed to build experience and close skill gaps.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon-wrapper indigo">
+                        <i data-lucide="calendar"></i>
+                    </div>
+                    <h3>Study Planner</h3>
+                    <p>Constructs a structured, chronological 8-week curriculum dedicated to mastering your missing skills.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon-wrapper violet">
+                        <i data-lucide="layers"></i>
+                    </div>
+                    <h3>Portfolio Project Builder</h3>
+                    <p>Suggests 3 custom portfolio projects to build, explaining what they teach and how they demonstrate expertise.</p>
+                </div>
+            </div>
+
+            <!-- Pipeline Architecture Section -->
+            <div id="architecture-anchor" class="section-divider"></div>
+            <div class="section-header">
+                <h2 class="section-title">Sequential Pipeline Architecture</h2>
+                <p class="section-desc">How our agents coordinate. Each step depends on the output of the prior agent to construct a highly unified, cohesive report.</p>
+            </div>
+            <div class="glass-card arch-card">
+                <div class="pipeline-flow">
+                    <div class="pipeline-step">
+                        <div class="step-num">1</div>
+                        <div class="step-label">Career Matcher</div>
+                        <div class="step-details">Outputs target paths</div>
+                    </div>
+                    <div class="pipeline-arrow"><i data-lucide="chevron-right"></i></div>
+                    <div class="pipeline-step">
+                        <div class="step-num">2</div>
+                        <div class="step-label">Skill Gap Assessor</div>
+                        <div class="step-details">Outputs missing skills</div>
+                    </div>
+                    <div class="pipeline-arrow"><i data-lucide="chevron-right"></i></div>
+                    <div class="pipeline-step split-step-start">
+                        <div class="step-num">3</div>
+                        <div class="step-label">Planning & Finder</div>
+                        <div class="step-details">Parallel outputs</div>
+                    </div>
+                </div>
+                <div class="pipeline-split-branches">
+                    <div class="branch-card">
+                        <i data-lucide="search" class="branch-icon"></i>
+                        <div>
+                            <h4>Internship Agent</h4>
+                            <p>Matches missing skills and careers to real-world roles.</p>
+                        </div>
+                    </div>
+                    <div class="branch-card">
+                        <i data-lucide="calendar" class="branch-icon"></i>
+                        <div>
+                            <h4>Study Planner Agent</h4>
+                            <p>Distributes missing skills over an 8-week schedule.</p>
+                        </div>
+                    </div>
+                    <div class="branch-card">
+                        <i data-lucide="layers" class="branch-icon"></i>
+                        <div>
+                            <h4>Project Agent</h4>
+                            <p>Suggests custom portfolio projects targeting missing skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: STUDENT PROFILE FORM -->
+        <section id="form-section" class="inactive-section">
+            <div class="form-wrapper">
+                <button class="btn-back" id="btn-form-back">
+                    <i data-lucide="arrow-left"></i> Back to Homepage
+                </button>
+                <div class="form-header">
+                    <h2>Build Your Mentor Profile</h2>
+                    <p>Enter your profile details so the AI agent ensemble can evaluate your path.</p>
+                </div>
+                <form id="profile-form" class="glass-card form-card">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="student-name">Full Name</label>
+                            <input type="text" id="student-name" placeholder="e.g. Muhammad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-degree">Degree Program</label>
+                            <input type="text" id="student-degree" placeholder="e.g. BS Computer Science" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-semester">Current Semester</label>
+                            <input type="number" id="student-semester" min="1" max="12" placeholder="e.g. 4" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-cgpa">Current CGPA</label>
+                            <input type="number" id="student-cgpa" min="0.0" max="4.0" step="0.01" placeholder="e.g. 3.2" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-skills">Your Current Skills <span class="label-hint">(comma-separated)</span></label>
+                        <div class="tags-input-wrapper">
+                            <input type="text" id="student-skills" placeholder="e.g. Python, Git, HTML, SQL" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-interests">Your Fields of Interest <span class="label-hint">(comma-separated)</span></label>
+                        <div class="tags-input-wrapper">
+                            <input type="text" id="student-interests" placeholder="e.g. AI, Data Science, Web Development" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-lg" id="btn-submit-form">
+                            Generate Mentorship Report
+                            <i data-lucide="sparkles" class="btn-icon-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 3: LOADING OVERLAY -->
+        <section id="loading-section" class="inactive-section">
+            <div class="loading-wrapper">
+                <div class="loader-ring">
+                    <div></div><div></div><div></div><div></div>
+                </div>
+                <div class="loading-text-container">
+                    <h3 id="loader-title">Analyzing Your Profile</h3>
+                    <p id="loader-subtitle">Sequencing the AI Agent Pipeline...</p>
+                </div>
+                
+                <div class="loading-steps-list">
+                    <div class="loading-step-item" id="load-step-1">
+                        <i data-lucide="circle" class="step-icon"></i>
+                        <span>Evaluating Career Paths (CareerAgent)</span>
+                    </div>
+                    <div class="loading-step-item" id="load-step-2">
+                        <i data-lucide="circle" class="step-icon"></i>
+                        <span>Scanning for Skill Gaps (SkillGapAgent)</span>
+                    </div>
+                    <div class="loading-step-item" id="load-step-3">
+                        <i data-lucide="circle" class="step-icon"></i>
+                        <span>Recommending Internships (InternshipAgent)</span>
+                    </div>
+                    <div class="loading-step-item" id="load-step-4">
+                        <i data-lucide="circle" class="step-icon"></i>
+                        <span>Drafting 8-Week Study Plan (StudyPlannerAgent)</span>
+                    </div>
+                    <div class="loading-step-item" id="load-step-5">
+                        <i data-lucide="circle" class="step-icon"></i>
+                        <span>Designing Portfolio Projects (ProjectAgent)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: RESULTS DASHBOARD -->
+        <section id="dashboard-section" class="inactive-section">
+            <div class="dashboard-header">
+                <div>
+                    <h2 class="gradient-text">Your Personalized Success Roadmap</h2>
+                    <p class="dashboard-subtitle">Student Name: <strong id="dash-student-name">...</strong> | Major: <strong id="dash-student-degree">...</strong></p>
+                </div>
+                <button class="btn btn-secondary" id="btn-dash-restart">
+                    <i data-lucide="refresh-cw" class="btn-icon-left"></i> Analyze New Profile
+                </button>
+            </div>
+
+            <!-- Grid Dashboard Layout -->
+            <div class="dashboard-grid">
+                
+                <!-- Card 1: Careers -->
+                <div class="glass-card dash-card" id="card-careers">
+                    <div class="dash-card-header">
+                        <div class="card-title-block">
+                            <i data-lucide="briefcase" class="text-purple"></i>
+                            <h3>Career Recommendations</h3>
+                        </div>
+                        <span class="source-badge" id="source-careers">AI</span>
+                    </div>
+                    <div class="dash-card-content">
+                        <ol class="career-list" id="dash-careers-list">
+                            <!-- Populated dynamically -->
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Card 2: Skill Gaps -->
+                <div class="glass-card dash-card" id="card-skillgaps">
+                    <div class="dash-card-header">
+                        <div class="card-title-block">
+                            <i data-lucide="compass" class="text-blue"></i>
+                            <h3>Skill Gap Analysis</h3>
+                        </div>
+                        <span class="source-badge" id="source-gaps">AI</span>
+                    </div>
+                    <div class="dash-card-content">
+                        <p class="gap-intro" id="dash-gap-message">Based on your career paths, focus on these subjects:</p>
+                        <ul class="skills-gap-list" id="dash-gaps-list">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Internships -->
+                <div class="glass-card dash-card" id="card-internships">
+                    <div class="dash-card-header">
+                        <div class="card-title-block">
+                            <i data-lucide="search" class="text-cyan"></i>
+                            <h3>Recommended Internships</h3>
+                        </div>
+                        <span class="source-badge" id="source-internships">AI</span>
+                    </div>
+                    <div class="dash-card-content">
+                        <div class="internships-container" id="dash-internships-list">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Study Plan -->
+                <div class="glass-card dash-card full-width-card" id="card-studyplan">
+                    <div class="dash-card-header">
+                        <div class="card-title-block">
+                            <i data-lucide="calendar" class="text-indigo"></i>
+                            <h3>8 Week Customized Curriculum</h3>
+                        </div>
+                        <span class="source-badge" id="source-study">AI</span>
+                    </div>
+                    <div class="dash-card-content">
+                        <div class="timeline" id="dash-study-timeline">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Projects -->
+                <div class="glass-card dash-card full-width-card" id="card-projects">
+                    <div class="dash-card-header">
+                        <div class="card-title-block">
+                            <i data-lucide="layers" class="text-violet"></i>
+                            <h3>Portfolio Building Projects</h3>
+                        </div>
+                        <span class="source-badge" id="source-projects">AI</span>
+                    </div>
+                    <div class="dash-card-content">
+                        <div class="projects-grid" id="dash-projects-list">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 SuccessAI. Built using Multi-Agent Sequential Orchestration.</p>
+            <div class="footer-links">
+                <span>API Version 1.0</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
