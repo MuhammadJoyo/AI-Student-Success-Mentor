@@ -15,6 +15,5 @@ __pycache__/
 # Generated Reports
 output/*.md
 
-# OS Files
-.DS_Store
-Thumbs.db
+# Test Files
+test.py
