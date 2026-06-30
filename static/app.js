@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p class="text-muted">Recommended Entry Role</p>
                         </div>
                     </div>
-                    <button class="btn btn-secondary btn-sm" onclick="alert('Applications integrated in SuccessAI Enterprise version!')">Apply</button>
+                    <span class="role-badge">Recommended Role</span>
                 `;
                 internshipsList.appendChild(item);
             });
@@ -317,10 +317,10 @@ document.addEventListener("DOMContentLoaded", () => {
         badge.className = "source-badge";
         if (source === "gemini") {
             badge.classList.add("badge-gemini");
-            badge.textContent = "Gemini AI";
+            badge.textContent = "GEMINI AI";
         } else if (source === "fallback") {
             badge.classList.add("badge-fallback");
-            badge.textContent = "Fallback DB";
+            badge.textContent = "Rule-Based Analysis";
         } else {
             badge.textContent = source || "Unknown";
         }

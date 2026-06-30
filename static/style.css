@@ -121,9 +121,9 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     width: 100%;
-    background: rgba(7, 11, 19, 0.7);
+    background: rgba(7, 11, 19, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-glass);
@@ -740,19 +740,25 @@ body {
 /* Grid Layout */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
     margin-bottom: 6rem;
 }
 
 .full-width-card {
-    grid-column: span 2;
+    grid-column: span 6;
 }
 
 .dash-card {
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
+    height: 100%;
+}
+
+/* Individual card column configurations */
+#card-careers, #card-skillgaps, #card-internships {
+    grid-column: span 2;
 }
 
 .dash-card-header {
@@ -787,27 +793,42 @@ body {
 .text-violet { color: #c084fc; }
 
 .source-badge {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border-glass);
-    padding: 0.25rem 0.6rem;
+    padding: 0.3rem 0.75rem;
     border-radius: 2rem;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
 }
 
 .source-badge.badge-gemini {
-    background: rgba(99, 102, 241, 0.1);
-    border-color: rgba(99, 102, 241, 0.3);
-    color: #a5b4fc;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #c084fc;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
 }
 
 .source-badge.badge-fallback {
-    background: rgba(245, 158, 11, 0.1);
-    border-color: rgba(245, 158, 11, 0.3);
+    background: rgba(245, 158, 11, 0.06);
+    border-color: rgba(245, 158, 11, 0.35);
     color: #fcd34d;
+}
+
+.role-badge {
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    color: #22d3ee;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 /* Career recommendations content */
@@ -1064,7 +1085,7 @@ body {
     .dashboard-grid {
         grid-template-columns: 1fr;
     }
-    .full-width-card {
+    .full-width-card, #card-careers, #card-skillgaps, #card-internships {
         grid-column: span 1;
     }
     .projects-grid {
@@ -1076,6 +1097,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
     .hero-title {
         font-size: 2.5rem;
     }
@@ -1090,5 +1114,16 @@ body {
     }
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    .dash-card {
+        padding: 1.5rem;
+    }
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+    .dashboard-header button {
+        width: 100%;
     }
 }

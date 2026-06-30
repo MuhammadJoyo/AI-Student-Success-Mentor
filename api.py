@@ -14,7 +14,8 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from orchestrator import Orchestrator
 
-app = Flask(__name__, static_folder='static', static_url_path='')
+static_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
+app = Flask(__name__, static_folder=static_dir, static_url_path='')
 CORS(app)  # Enable CORS for convenience in testing and deployment
 
 # Serve frontend main index.html at root

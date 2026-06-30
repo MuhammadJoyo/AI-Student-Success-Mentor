@@ -223,6 +223,10 @@ class ReportGenerator:
         # Convert the raw "gemini"/"fallback" strings into a friendlier,
         # capitalized label for the final report (e.g. "Gemini" not "gemini").
         def label(source: str) -> str:
+            if source == "gemini":
+                return "GEMINI AI"
+            if source == "fallback":
+                return "Rule-Based Analysis"
             return source.capitalize() if source in ("gemini", "fallback") else "Unknown"
 
         lines = [
