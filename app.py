@@ -1,4 +1,5 @@
 from agents.career_agent import CareerAgent
+from agents.skill_gap_agent import SkillGapAgent
 
 student_profile = {
     "name": "Muhammad",
@@ -9,8 +10,18 @@ student_profile = {
     "interests": ["AI", "Data Science"]
 }
 
-agent = CareerAgent()
+career_agent = CareerAgent()
+career_result = career_agent.run(student_profile)
 
-result = agent.run(student_profile)
+print("\nCAREER RESULT:")
+print(career_result)
 
-print(result)
+skill_agent = SkillGapAgent()
+
+skill_result = skill_agent.run({
+    "skills": student_profile["skills"],
+    "career_paths": career_result["career_paths"]
+})
+
+print("\nSKILL GAP RESULT:")
+print(skill_result)
