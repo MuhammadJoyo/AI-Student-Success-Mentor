@@ -6,51 +6,76 @@ An intelligent multi-agent career guidance platform that helps university studen
 
 ## Overview
 
-AI Student Success Mentor is a multi-agent AI system built using Python, Flask, and the Gemini API.
+AI Student Success Mentor is a multi-agent AI system built using Python, Flask, and Google Gemini.
 
-The platform analyzes a student's profile and generates a personalized roadmap through five specialized agents working together in a sequential pipeline.
+The platform analyzes a student's academic profile and generates a personalized success roadmap through five specialized AI agents working together in a sequential pipeline.
 
-The system remains functional even when Gemini API is unavailable by automatically switching to rule-based fallback recommendations.
+The system remains functional even when Gemini API is unavailable by automatically switching to a rule-based fallback engine.
+
+---
+
+## Problem Statement
+
+Many university students struggle with:
+
+- Choosing the right career path
+- Understanding industry skill requirements
+- Finding suitable internships
+- Building structured learning plans
+- Creating portfolio-worthy projects
+
+AI Student Success Mentor solves these challenges by providing personalized recommendations through a coordinated multi-agent architecture.
 
 ---
 
 ## Features
 
 ### Career Recommendation Agent
+
 Suggests suitable career paths based on:
 
 - Degree Program
-- Skills
-- Interests
+- Current Skills
 - Academic Background
+- Interests
 
 ### Skill Gap Analysis Agent
+
 Identifies missing skills required for the recommended career path.
 
 ### Internship Recommendation Agent
-Suggests realistic internship opportunities that align with career goals and current skill level.
+
+Suggests realistic internship opportunities aligned with the student's profile.
 
 ### Study Planner Agent
+
 Generates a personalized 8-week learning roadmap.
 
-### Project Recommendation Agent
-Suggests portfolio-worthy projects to strengthen practical experience.
+### Portfolio Project Agent
 
-### Fallback System
-If Gemini API is unavailable or quota is exceeded, the platform automatically switches to a rule-based fallback engine.
+Recommends portfolio-worthy projects to strengthen practical experience.
 
-### Modern Frontend Dashboard
+### Gemini AI Integration
+
+Uses Google Gemini for intelligent reasoning and personalized recommendations.
+
+### Rule-Based Fallback Engine
+
+Automatically switches to fallback recommendations if Gemini is unavailable or quota is exceeded.
+
+### Modern Dashboard
+
 - Responsive Design
 - Glassmorphism UI
 - Real-Time Analysis Workflow
-- Interactive Dashboard
+- Interactive Results Dashboard
 - Multi-Agent Visualization
 
 ---
 
-## System Architecture
+## Multi-Agent Architecture
 
-The system follows a sequential multi-agent pipeline.
+The platform follows a sequential orchestration workflow.
 
 ```text
 Student Profile
@@ -93,12 +118,13 @@ Frontend Dashboard
 - HTML5
 - CSS3
 - JavaScript
-- Glassmorphism UI Design
+- Responsive UI Design
 
-### Version Control
+### Development Tools
 
 - Git
 - GitHub
+- Vercel
 
 ---
 
@@ -112,7 +138,7 @@ AI-Student-Success-Mentor/
 │   ├── skill_gap_agent.py
 │   ├── internship_agent.py
 │   ├── study_planner_agent.py
-│   └── project_recommendation_agent.py
+│   └── project_agent.py
 │
 ├── services/
 │   └── gemini_service.py
@@ -125,14 +151,15 @@ AI-Student-Success-Mentor/
 ├── docs/
 │   └── architecture.md
 │
-├── output/
-│
 ├── screenshots/
+│
+├── output/
 │
 ├── api.py
 ├── app.py
 ├── orchestrator.py
 ├── report_generator.py
+├── vercel.json
 ├── README.md
 ├── requirements.txt
 ├── .env.example
@@ -147,6 +174,7 @@ AI-Student-Success-Mentor/
 
 ```bash
 git clone https://github.com/MuhammadJoyo/AI-Student-Success-Mentor.git
+
 cd AI-Student-Success-Mentor
 ```
 
@@ -156,7 +184,7 @@ cd AI-Student-Success-Mentor
 python -m venv .venv
 ```
 
-### Activate Virtual Environment
+### Activate Environment
 
 Windows:
 
@@ -183,15 +211,7 @@ GEMINI_MODEL=gemini-2.5-flash
 
 ---
 
-## Running The Project
-
-### Run Flask Server
-
-```bash
-py api.py
-```
-
-or
+## Running Locally
 
 ```bash
 python api.py
@@ -205,35 +225,64 @@ http://127.0.0.1:5000
 
 ---
 
+## Deployment
+
+This project supports deployment on:
+
+- Vercel
+- Render
+- Railway
+
+### Deploy on Vercel
+
+1. Push project to GitHub
+2. Import repository into Vercel
+3. Add Environment Variables
+
+```env
+GEMINI_API_KEY=your_api_key_here
+GEMINI_MODEL=gemini-2.5-flash
+```
+
+4. Deploy
+
+A `vercel.json` configuration file is included for deployment.
+
+---
+
 ## Screenshots
 
 ### Homepage
 
-![Homepage](screenshots/01-homepage.png)
+![Homepage](screenshots/01-homepage-hero.png)
 
 ### Specialized Agents
 
-![Agents](screenshots/02-agents-section.png)
+![Agents](screenshots/02-specialized-agents.png)
 
 ### Architecture
 
-![Architecture](screenshots/03-architecture.png)
+![Architecture](screenshots/03-system-architecture.png)
 
 ### Student Profile Form
 
-![Profile Form](screenshots/04-profile-form.png)
+![Profile Form](screenshots/04-student-profile-form.png)
 
 ### Analysis Pipeline
 
-![Loading Screen](screenshots/05-loading-screen.png)
+![Analysis Pipeline](screenshots/05-analysis-pipeline.png)
 
-### Results Dashboard
+### Personalized Dashboard
 
-![Dashboard](screenshots/06-results-top.png)
+![Dashboard](screenshots/06-personalized-roadmap-dashboard.png)
 
-### Study Plan and Projects
+### 8 Week Learning Roadmap
 
-![Dashboard Bottom](screenshots/07-results-bottom.png)
+![Study Plan](screenshots/07-eight-week-learning-roadmap.png)
+
+### Portfolio Project Recommendations
+
+![Projects](screenshots/08-portfolio-project-recommendations.png)
 
 ---
 
@@ -243,11 +292,30 @@ The platform generates:
 
 - Career Recommendations
 - Skill Gap Analysis
-- Internship Suggestions
-- 8 Week Study Plan
-- Portfolio Project Recommendations
+- Internship Recommendations
+- Personalized Learning Roadmap
+- Portfolio Project Suggestions
 
-All results are displayed in a modern dashboard interface.
+All results are displayed through an interactive dashboard.
+
+---
+
+## Kaggle AI Agents Capstone Project
+
+This project was developed for:
+
+**AI Agents: Intensive Vibe Coding Capstone Project (Kaggle x Google)**
+
+The solution demonstrates:
+
+- Multi-Agent Systems
+- Agent Orchestration
+- Gemini AI Integration
+- Rule-Based Fallback Design
+- Deployable Architecture
+- Modern User Experience
+
+Track: **Agents for Good**
 
 ---
 
@@ -256,19 +324,19 @@ All results are displayed in a modern dashboard interface.
 - User Authentication
 - Database Integration
 - PDF Report Export
-- Real Internship APIs
 - Resume Analyzer
 - AI Interview Coach
+- Real Internship APIs
 - Job Recommendation Engine
-- Cloud Deployment
+- Cloud Analytics
 
 ---
 
 ## Author
 
-Muhammad Joyo
+**Muhammad Joyo**
 
-BS Computer Science Student
+BS Computer Science
 
 Sukkur IBA University
 
